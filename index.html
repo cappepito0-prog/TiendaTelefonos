@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telgico📱 - Tienda de Celulares</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="container">
+            <div class="logo">Telgico 📱</div>
+            <nav>
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Productos</a>
+                <a href="#ofertas">Ofertas</a>
+                <a href="#contacto">Contacto</a>
+                <a href="login.html" id="loginLink" class="nav-link-login">Iniciar Sesión</a>
+                <span id="userInfo" style="display: none; color: white; margin-left: 1.25rem;">
+                    <span id="userName"></span>
+                    <a href="#" onclick="logout(event)" style="color: #ff6b6b; margin-left: 0.625rem; text-decoration: none;">Salir</a>
+                </span>
+                <span class="cart-icon" onclick="toggleCart()">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </span>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Los Mejores Celulares al Mejor Precio</h1>
+            <p>Descubre nuestra amplia variedad de smartphones de las mejores marcas</p>
+            <a href="catalog.html" class="btn">Explorar Catálogo</a>
+        </div>
+    </section>
+
+    <!-- Sección de Productos -->
+    <section class="products-section" id="productos">
+        <div class="container">
+            <h2 class="section-title">Nuestros Productos Destacados</h2>
+            <div class="products-grid">
+                <!-- Producto 1 -->
+                <div class="product-card">
+                    <div class="product-image"><img src="https://blog.kakaocdn.net/dn/cmj8BP/btsuqDgmTLr/BvmqKEIBBgo1fN7sD1RYF1/img.jpg" alt="iPhone 15 Pro" referrerpolicy="no-referrer"></div>
+                    <div class="product-info">
+                        <div class="product-name">iPhone 15 Pro</div>
+                        <div class="product-specs">
+                            • 6.1" Super Retina XDR<br>
+                            • A17 Pro<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$1,299</div>
+                        <button onclick="addToCart(1, 'iPhone 15 Pro', 1299)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="product-card">
+                    <div class="product-image"><img src="https://www.celulares.com/fotos/samsung-galaxy-s24-97307-g-alt.jpg" alt="Google Pixel 8" referrerpolicy="no-referrer"></div>
+                    <div class="product-info">
+                        <div class="product-name">Samsung Galaxy S24</div>
+                        <div class="product-specs">
+                            • 6.2" AMOLED<br>
+                            • Snapdragon 8 Gen 3<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$999</div>
+                        <button onclick="addToCart(2, 'Samsung Galaxy S24', 999)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="product-card">
+                    <div class="product-image"><img src="https://i.blogs.es/c46410/pixels/450_1000.jpeg" alt="Google Pixel 8" referrerpolicy="no-referrer"></div>
+                    <div class="product-info">
+                        <div class="product-name">Google Pixel 8</div>
+                        <div class="product-specs">
+                            • 6.2" OLED<br>
+                            • Google Tensor G3<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$799</div>
+                        <button onclick="addToCart(3, 'Google Pixel 8', 799)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="product-card">
+                    <div class="product-image"><img src="https://cdn.smart-gsm.com/img/picture/big/oneplus-12.jpg" alt="OnePlus 12" referrerpolicy="no-referrer"></div>
+                    <div class="product-info">
+                        <div class="product-name">OnePlus 12</div>
+                        <div class="product-specs">
+                            • 6.7" AMOLED<br>
+                            • Snapdragon 8 Gen 3<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$749</div>
+                        <button onclick="addToCart(4, 'OnePlus 12', 749)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 5 -->
+                <div class="product-card">
+                    <div class="product-image"><img src="https://www.celulares.com/fotos/xiaomi-14-97562-g.jpg" alt="Xiaomi 14" referrerpolicy="no-referrer"></div>
+                    <div class="product-info">
+                        <div class="product-name">Xiaomi 14</div>
+                        <div class="product-specs">
+                            • 6.36" AMOLED<br>
+                            • Snapdragon 8 Gen 3<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$699</div>
+                        <button onclick="addToCart(5, 'Xiaomi 14', 699)">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Ofertas -->
+    <section class="offers-section" id="ofertas">
+        <div class="container">
+            <h2 class="section-title">Ofertas Especiales</h2>
+            <div class="offer-banner">
+                <h3>🎉 ¡Descuento del 20% en modelos seleccionados!</h3>
+                <p>Aprovecha nuestras promociones limitadas. Envío gratis a toda la ciudad.</p>
+                <a href="ofertas.html" class="btn" style="background-color: white; color: #ff6b6b; margin-top: 1.25rem; text-decoration: none; display: inline-block;">Ver Más Ofertas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer id="contacto">
+        <div class="container">
+            <div>
+                <h4>Sobre Nosotros</h4>
+                <p>Telgico📱 es tu tienda de confianza para adquirir los mejores celulares del mercado con precios competitivos y excelente servicio al cliente.</p>
+            </div>
+            <div>
+                <h4>Enlaces Rápidos</h4>
+                <p><a href="#">Productos</a></p>
+                <p><a href="#">Ofertas</a></p>
+                <p><a href="#">Contacto</a></p>
+                <p><a href="#">Política de Privacidad</a></p>
+            </div>
+            <div class="contact-info">
+                <h4>Contacto</h4>
+                <p>📞 +593 99 999 999</p>
+                <p>📧 Laboratoriovidanueva21@gmail.com</p>
+                <p>📍 Av. Pedro Vicente Maldonado S58-34</p>
+                <p>Horario: Lun-Sab 9:00-20:00</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal del Carrito -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Mi Carrito</h2>
+                <button class="close-btn" onclick="toggleCart()">✕</button>
+            </div>
+            <div id="cartItems"></div>
+            <div id="cartEmpty" class="cart-empty">
+                <p>Tu carrito está vacío</p>
+            </div>
+            <div id="cartTotalContainer" style="display: none;">
+                <div class="cart-total" id="cartTotal">Total: $0</div>
+                <button class="btn checkout-btn" onclick="checkout()">Proceder al Pago</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
