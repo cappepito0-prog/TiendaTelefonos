@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Completo - Telgico📱</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="container">
+            <div class="logo">Telgico📱</div>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="index.html#productos">Productos Destacados</a>
+                <a href="index.html#ofertas">Ofertas</a>
+                <a href="index.html#contacto">Contacto</a>
+                <a href="login.html" id="loginLink" class="nav-link-login">Iniciar Sesión</a>
+                <span id="userInfo" style="display: none; color: white; margin-left: 1.25rem;">
+                    <span id="userName"></span>
+                    <a href="#" onclick="logout(event)" style="color: #ff6b6b; margin-left: 0.625rem; text-decoration: none;">Salir</a>
+                </span>
+                <span class="cart-icon" onclick="toggleCart()">
+                    🛒
+                    <span class="cart-count" id="cartCount">0</span>
+                </span>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Catálogo -->
+    <section class="products-section">
+        <div class="container">
+            <h1 class="section-title">Catálogo Completo</h1>
+            <p style="text-align: center; color: #666; margin-bottom: 3.125rem;">Explora nuestra amplia selección de celulares de las mejores marcas</p>
+            
+            <div class="products-grid">
+                <!-- Producto 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://blog.kakaocdn.net/dn/cmj8BP/btsuqDgmTLr/BvmqKEIBBgo1fN7sD1RYF1/img.jpg" alt="iPhone 15 Pro">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">iPhone 15 Pro</div>
+                        <div class="product-specs">
+                            • 6.1" Super Retina XDR<br>
+                            • A17 Pro<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$1,299</div>
+                        <button onclick="addToCart(1, 'iPhone 15 Pro', 1299)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.celulares.com/fotos/samsung-galaxy-s24-97307-g-alt.jpg" alt="Samsung Galaxy S24">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Samsung Galaxy S24</div>
+                        <div class="product-specs">
+                            • 6.2" AMOLED<br>
+                            • Snapdragon 8 Gen 3<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$999</div>
+                        <button onclick="addToCart(2, 'Samsung Galaxy S24', 999)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.blogs.es/c46410/pixels/450_1000.jpeg" alt="Google Pixel 8">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Google Pixel 8</div>
+                        <div class="product-specs">
+                            • 6.2" OLED<br>
+                            • Google Tensor G3<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$799</div>
+                        <button onclick="addToCart(3, 'Google Pixel 8', 799)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://cdn.smart-gsm.com/img/picture/big/oneplus-12.jpg" alt="OnePlus 12">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">OnePlus 12</div>
+                        <div class="product-specs">
+                            • 6.7" AMOLED<br>
+                            • Snapdragon 8 Gen 3<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$749</div>
+                        <button onclick="addToCart(4, 'OnePlus 12', 749)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.celulares.com/fotos/xiaomi-14-97562-g.jpg" alt="Xiaomi 14">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Xiaomi 14</div>
+                        <div class="product-specs">
+                            • 6.36" AMOLED<br>
+                            • Snapdragon 8 Gen 3<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$699</div>
+                        <button onclick="addToCart(5, 'Xiaomi 14', 699)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 6 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://motoecuador.vtexassets.com/arquivos/ids/156860-800-auto?v=638564024306500000&width=800&height=auto&aspect=true" alt="Motorola Edge 50">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Motorola Edge 50</div>
+                        <div class="product-specs">
+                            • 6.7" AMOLED<br>
+                            • Snapdragon 8s Gen 3<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$649</div>
+                        <button onclick="addToCart(6, 'Motorola Edge 50', 649)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 7 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://lavictoria.ec/wp-content/uploads/2023/11/IPHONE-15-DE-128GB-7-600x600.webp" alt="iPhone 15">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">iPhone 15</div>
+                        <div class="product-specs">
+                            • 6.1" Liquid Retina<br>
+                            • A16 Bionic<br>
+                            • 128GB Storage
+                        </div>
+                        <div class="product-price">$999</div>
+                        <button onclick="addToCart(7, 'iPhone 15', 999)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 8 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://tienda.movistar.com.ec/media/catalog/product/cache/d730591e49ae7d4a1adb9133c8cae915/s/a/samsung-a54-negro-doble-movistar_hkn14qxup53duuzb.png" alt="Samsung Galaxy A54">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Samsung Galaxy A54</div>
+                        <div class="product-specs">
+                            • 6.4" AMOLED<br>
+                            • Exynos 1280<br>
+                            • 128GB Storage
+                        </div>
+                        <div class="product-price">$499</div>
+                        <button onclick="addToCart(8, 'Samsung Galaxy A54', 499)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 9 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://tienda.movistar.com.ec/media/catalog/product/cache/d730591e49ae7d4a1adb9133c8cae915/x/i/xiaomi-redmi-note-13-pro-negro-doble-movistar.png" alt="Redmi Note 13">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Redmi Note 13</div>
+                        <div class="product-specs">
+                            • 6.67" AMOLED<br>
+                            • Snapdragon 685<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$399</div>
+                        <button onclick="addToCart(9, 'Redmi Note 13', 399)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 10 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images-cdn.ubuy.co.in/65b6453747de187fbf4be7ac-oppo-find-x6-5g-smartphone.jpg" alt="Oppo Find X6">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Oppo Find X6</div>
+                        <div class="product-specs">
+                            • 6.7" AMOLED<br>
+                            • Snapdragon 8 Gen 2<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$899</div>
+                        <button onclick="addToCart(10, 'Oppo Find X6', 899)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 11 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.blogs.es/0629ab/vivov27pro/650_1200.jpeg" alt="Vivo V27 Pro">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Vivo V27 Pro</div>
+                        <div class="product-specs">
+                            • 6.78" AMOLED<br>
+                            • MediaTek Dimensity 8200<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$749</div>
+                        <button onclick="addToCart(11, 'Vivo V27 Pro', 749)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 12 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://i.blogs.es/42cf73/leds/450_1000.jpeg" alt="Nothing Phone 2">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Nothing Phone 2</div>
+                        <div class="product-specs">
+                            • 6.7" OLED<br>
+                            • Snapdragon 8+ Gen 1<br>
+                            • 512GB Storage
+                        </div>
+                        <div class="product-price">$799</div>
+                        <button onclick="addToCart(12, 'Nothing Phone 2', 799)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 13 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.celulares.com/fotos/samsung-galaxy-z-fold5-97087-g-alt.jpg" alt="Samsung Galaxy Z Fold 5">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Samsung Galaxy Z Fold 5</div>
+                        <div class="product-specs">
+                            • 7.6" Dynamic AMOLED<br>
+                            • Snapdragon 8 Gen 2<br>
+                            • 512GB Storage
+                        </div>
+                        <div class="product-price">$1,999</div>
+                        <button onclick="addToCart(13, 'Samsung Galaxy Z Fold 5', 1999)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 14 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/41EgoWV1GlL.jpg" alt="iPhone 14 Pro Max">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">iPhone 14 Pro Max</div>
+                        <div class="product-specs">
+                            • 6.7" Super Retina XDR<br>
+                            • A16 Bionic<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$1,199</div>
+                        <button onclick="addToCart(14, 'iPhone 14 Pro Max', 1199)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 15 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://rukminim2.flixcart.com/image/480/640/l3rmzrk0/mobile/5/o/q/-original-imagetmenznfey7h.jpeg?q=90" alt="Realme GT 2 Pro">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Realme GT 2 Pro</div>
+                        <div class="product-specs">
+                            • 6.7" AMOLED<br>
+                            • Snapdragon 8+ Gen 1<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$649</div>
+                        <button onclick="addToCart(15, 'Realme GT 2 Pro', 649)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 16 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://imei.org/storage/files/images/11394/preview/htc-u23-2.png" alt="HTC U23">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">HTC U23</div>
+                        <div class="product-specs">
+                            • 6.7" OLED<br>
+                            • Snapdragon 8 Gen 2<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$849</div>
+                        <button onclick="addToCart(16, 'HTC U23', 849)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 17 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://mundotek.com.ec/wp-content/uploads/2024/01/03-sm-s928_galaxys24ultra_front_titaniumgray.png" alt="Samsung Galaxy S24 Ultra">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Samsung Galaxy S24 Ultra</div>
+                        <div class="product-specs">
+                            • 6.8" Dynamic AMOLED<br>
+                            • Snapdragon 8 Gen 3<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$1,299</div>
+                        <button onclick="addToCart(17, 'Samsung Galaxy S24 Ultra', 1299)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 18 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/41+C9Ixzz6L._SL500_.jpg" alt="Xiaomi 13 Ultra">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Xiaomi 13 Ultra</div>
+                        <div class="product-specs">
+                            • 6.73" AMOLED<br>
+                            • Snapdragon 8 Gen 2<br>
+                            • 512GB Storage
+                        </div>
+                        <div class="product-price">$1,099</div>
+                        <button onclick="addToCart(18, 'Xiaomi 13 Ultra', 1099)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 19 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/81YofuHBMZL._AC_UF894,1000_QL80_.jpg" alt="Sony Xperia 1 V">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Sony Xperia 1 V</div>
+                        <div class="product-specs">
+                            • 6.5" OLED 4K<br>
+                            • Snapdragon 8 Gen 2<br>
+                            • 512GB Storage
+                        </div>
+                        <div class="product-price">$1,399</div>
+                        <button onclick="addToCart(19, 'Sony Xperia 1 V', 1399)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 20 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://m.media-amazon.com/images/I/61NtAV637dL._AC_SL6000_.jpg" alt="Poco X5 Pro">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Poco X5 Pro</div>
+                        <div class="product-specs">
+                            • 6.67" AMOLED<br>
+                            • Snapdragon 778G+<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$399</div>
+                        <button onclick="addToCart(20, 'Poco X5 Pro', 399)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 21 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://motoecuador.vtexassets.com/arquivos/ids/155888-800-auto?v=638297867397930000&width=800&height=auto&aspect=true" alt="Motorola Razr 40">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Motorola Razr 40</div>
+                        <div class="product-specs">
+                            • 6.9" AMOLED Foldable<br>
+                            • Snapdragon 8+ Gen 1<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$999</div>
+                        <button onclick="addToCart(21, 'Motorola Razr 40', 999)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 22 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://www.celulares.com/fotos/oneplus-ace-3-97905-g-alt.jpg" alt="OnePlus Ace 3">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">OnePlus Ace 3</div>
+                        <div class="product-specs">
+                            • 6.78" OLED<br>
+                            • Snapdragon 8 Gen 3<br>
+                            • 256GB Storage
+                        </div>
+                        <div class="product-price">$799</div>
+                        <button onclick="addToCart(22, 'OnePlus Ace 3', 799)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 23 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://http2.mlstatic.com/D_Q_NP_771228-MLU77522765563_072024-O.webp" alt="Nubia Z50 Pro">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Nubia Z50 Pro</div>
+                        <div class="product-specs">
+                            • 6.67" AMOLED<br>
+                            • Snapdragon 8 Gen 2<br>
+                            • 512GB Storage
+                        </div>
+                        <div class="product-price">$899</div>
+                        <button onclick="addToCart(23, 'Nubia Z50 Pro', 899)">Añadir al Carrito</button>
+                    </div>
+                </div>
+
+                <!-- Producto 24 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://tienda.movistar.com.ec/media/catalog/product/cache/d730591e49ae7d4a1adb9133c8cae915/h/o/honor-magic-6-pro-verde-doble-movistar2_1.png" alt="Honor Magic 6 Pro">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-name">Honor Magic 6 Pro</div>
+                        <div class="product-specs">
+                            • 6.78" AMOLED<br>
+                            • Qualcomm Snapdragon 8 Gen 3<br>
+                            • 512GB Storage
+                        </div>
+                        <div class="product-price">$999</div>
+                        <button onclick="addToCart(24, 'Honor Magic 6 Pro', 999)">Añadir al Carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal del Carrito -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Mi Carrito</h2>
+                <button class="close-btn" onclick="toggleCart()">✕</button>
+            </div>
+            <div id="cartItems"></div>
+            <div id="cartEmpty" class="cart-empty">
+                <p>Tu carrito está vacío</p>
+            </div>
+            <div id="cartTotalContainer" style="display: none;">
+                <div class="cart-total" id="cartTotal">Total: $0</div>
+                <button class="btn checkout-btn" onclick="checkout()">Proceder al Pago</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container">
+            <div>
+                <h4>Sobre Nosotros</h4>
+                <p>TechMóvil es tu tienda de confianza para adquirir los mejores celulares del mercado con precios competitivos y excelente servicio al cliente.</p>
+            </div>
+            <div>
+                <h4>Enlaces Rápidos</h4>
+                <p><a href="index.html">Inicio</a></p>
+                <p><a href="index.html#ofertas">Ofertas</a></p>
+                <p><a href="index.html#contacto">Contacto</a></p>
+                <p><a href="#">Política de Privacidad</a></p>
+            </div>
+            <div class="contact-info">
+                <h4>Contacto</h4>
+                <p>📞 +593 99 999 999</p>
+                <p>📧 Laboratoriovidanueva21@gmail.com</p>
+                <p>📍 Av. Pedro Vicente Maldonado S58-34</p>
+                <p>Horario: Lun-Sab 9:00-20:00</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
